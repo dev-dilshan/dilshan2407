@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,6 +132,84 @@
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
             animation: fadeInUp 1s ease-out 0.5s both;
+            position: relative;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            
+            /* Glowing text effect */
+            text-shadow: 0 0 10px rgba(102, 126, 234, 0.3),
+                         0 0 20px rgba(102, 126, 234, 0.2),
+                         0 0 30px rgba(102, 126, 234, 0.1);
+            
+            /* Gradient text option */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(102, 126, 234, 0.8) 50%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: fadeInUp 1s ease-out 0.5s both, shimmer 3s ease-in-out infinite;
+        }
+
+        /* Animated underline effect */
+        .welcome-text::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.8), transparent);
+            animation: expandLine 2s ease-out 1.5s both;
+        }
+
+        /* Floating particles around text */
+        .welcome-text::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            border-radius: 20px;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        /* Shimmer animation for gradient text */
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Expanding line animation */
+        @keyframes expandLine {
+            0% { width: 0; }
+            100% { width: 80px; }
+        }
+
+        /* Pulse animation for background glow */
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Hover effect for welcome text */
+        .welcome-text:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 15px rgba(102, 126, 234, 0.5),
+                         0 0 25px rgba(102, 126, 234, 0.3),
+                         0 0 35px rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
         }
 
         .name {
@@ -469,5 +548,5 @@
             parallax.style.transform = `translateY(${speed}px)`;
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964d505be1db4418',t:'MTc1MzQ2Mzg3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964d727c61a3ff9d',t:'MTc1MzQ2NTI3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
